@@ -7,12 +7,13 @@ const Calculator = () => {
     const [signo, setSigno] = useState('')
     const [result, setResult] = useState(null);
     const [operacion, setOperacion] = useState('');
+
     const mostrarEnPantalla = (e) => {
         setResult(null);
         if(result !== null){
             setView(e.target.value);
             if(e.target.value.includes('+') || e.target.value.includes('-') || e.target.value.includes('/') ||e.target.value.includes('x')){
-                setOperacion(String(view).concat(e.target.value === 'x' ? '*' : e.target.value));
+                setOperacion(String(view).concat(e.target.value === 'x'?'*' : e.target.value));
             }else{
                 setOperacion(e.target.value);
             }
